@@ -1,0 +1,14 @@
+<h1>Blog on Rails</h1>
+<p>Diga ao mundo o que voce esta sentindo </p>
+
+<%= link_to "Novo Post", new_post_path, class: "btn btn-primary" %>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <h2><%= link_to post.title, post_path(post) %></h2>
+      <p><%= post.published_at.strftime("%d/%m/%Y") if post.published_at %></p>
+      <p><%= truncate(post.content, length: 100) %></p>--------------------------------------------------------------------------------
+    </li>
+  <% end %>
+</ul>          

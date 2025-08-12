@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: root
+  password: new
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: dbBlog_on_rails_development
+
+test:
+  <<: *default
+  database: dbBlog_on_rails
+
+production:
+  <<: *default
+  database: dbBlog_on_rails_production
+  username: root_prod_user
+  password: <%= ENV['new'] %>

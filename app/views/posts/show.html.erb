@@ -1,0 +1,7 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.published_at.strftime("%d/%m/%Y") if @post.published_at %></p>
+<div><%= simple_format(@post.content) %></div>
+
+<%= button_to "Editar", edit_post_path(@post), method: :get %> -----------
+<%= button_to "Delete", post_path(@post), method: :delete, data: { confirm: "Tem certeza?" } %> -----------
+<%= button_to "Voltar", posts_path, method: :get%> -----------
