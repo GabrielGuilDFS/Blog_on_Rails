@@ -42,3 +42,13 @@ jobs:
 
       - name: Run tests
         run: bin/rails test
+        
+      - name: Remove cached gems
+        run: |
+          bundle clean --force
+          rm -rf vendor/bundle
+
+      - name: Install dependencies
+        run: |
+          gem install pg -v "~> 1.6" -- --with-pg-config=/usr/bin/pg_config
+          bundle install --jobs 4 --retry 3
