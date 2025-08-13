@@ -11,8 +11,13 @@ development:
   database: dbBlog_on_rails_development
 
 test:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: dbBlog_on_rails
+  pool: 5
+  username: root
+  password: new
+  host: localhost
 
 production:
   <<: *default
