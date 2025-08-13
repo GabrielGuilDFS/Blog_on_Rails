@@ -41,22 +41,26 @@ git clone https://github.com/GabrielDFS/blog_on_rails.git
 cd blog_on_rails
 ```
 ### 6. Instale o Ruby usando RVM (caso não tenha):
+```bash
 rvm install 3.4.5
 rvm use 3.4.5 --default
-
+```
 ### 7. Instale as dependências do projeto:
+```bash
 bundle install
-
+```
 ### 8. Configure o banco de dados
 - Edite o arquivo config/database.yml para ajustar o usuário, senha e outras configurações do PostgreSQL conforme seu ambiente.
 
 ### 9. Crie e migre o banco de dados:
+```bash
 rails db:create
 rails db:migrate
-
+```
 ### 10. Inicie o servidor Rails:
+```bash
 rails server
-
+```
 ### 11. Acesse o projeto no navegador:
 - Abra http://localhost:3000 no seu navegador.
 
@@ -77,6 +81,7 @@ rails server
 - Database initialization
   
 - O banco é inicializado via:
-
+```bash
 rails db:create
 rails db:migrate
+```
