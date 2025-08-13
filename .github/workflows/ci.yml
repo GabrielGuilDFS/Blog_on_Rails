@@ -34,6 +34,11 @@ jobs:
         run: |
           bin/rails db:create RAILS_ENV=test
           bin/rails db:migrate RAILS_ENV=test
+          
+      - name: Reinstall pg gem
+        run: |
+          gem uninstall pg --all --executables
+          gem install pg -v "~> 1.6"
 
       - name: Run tests
         run: bin/rails test
